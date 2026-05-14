@@ -1,0 +1,32 @@
+# クリニック期限台帳 — legal-clinic-ja
+#
+# /legal-clinic-ja:deadlines --add によって作成される(または、/client-intake、
+# /draft、/status が期限を検出した際に抽出される)。/legal-clinic-ja:deadlines --report
+# が案件横断のロールアップのために読み込む。
+#
+# クリニック業務における期限超過は、指導弁護士にとってマルプラクティス(過誤責任)の
+# 露出となる。本ファイルは運用記録として扱うこと。
+#
+# ──────────────────────────────────────────────────────────────────────────
+# スキーマ
+# ──────────────────────────────────────────────────────────────────────────
+# - id:             文字列(slug: [case]-[short-description]-[YYYY-MM])
+#   case_id:        文字列 — インテイクシステム上の案件/クライアントへの参照
+#   case_name:      文字列 — 人間可読の案件名
+#   practice_area:  immigration | housing | family | consumer | criminal-defense | civil-rights | other
+#   type:           filing | hearing | statute-of-limitations | discovery | cure-period | response | notice | other
+#   description:    文字列 — 期日となるものの一行説明
+#   due_date:       YYYY-MM-DD
+#   time:           HH:MM(任意; 期日が明確な聴聞会や提出期限のため)
+#   timezone:       文字列(任意; デフォルトは CLAUDE.md の jurisdiction から)
+#   source:         文字列 — 期限の出所(裁判所命令、法令、クライアント文書など)
+#   owner_student:  文字列 — この期限を担当する学生
+#   owner_attorney: 文字列 — 指導弁護士(通常は CLAUDE.md から)
+#   status:         upcoming | today | overdue | completed | closed
+#   completed_date: YYYY-MM-DD | null
+#   notes:          文字列 | null
+#   created:        YYYY-MM-DD
+#   created_by:     文字列 — この期限を記録した学生
+# ──────────────────────────────────────────────────────────────────────────
+
+deadlines: []
