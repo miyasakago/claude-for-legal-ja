@@ -1,0 +1,25 @@
+# 更新台帳(Renewal Register)
+#
+# saas-msa-review(ハンドオフ)および renewal-tracker のモード 3([CLM] スキャン)によって登録されます。
+# 各エントリは契約がいつ更新されるか、いつまでに解約しなければならないかを追跡します。
+#
+# renewal-watcher エージェントはこれを毎週読み取り、次に控えているものを投稿します。
+
+renewals: []
+
+# エントリ例(実データが入ったら削除してください):
+#
+# - counterparty: "Acme SaaS Inc."
+#   agreement: "Acme Platform Subscription Agreement"
+#   signed_date: 2025-06-15
+#   initial_term_end: 2026-06-15
+#   renewal_mechanism: "auto-renew annual"
+#   notice_period_days: 60
+#   cancel_by: 2026-04-16
+#   price_on_renewal: "then-current list (uncapped)"
+#   annual_value: 48000
+#   business_owner: "jane@company.com"
+#   clm_id: "IC-12345"
+#   docusign_envelope: "abc-123"
+#   status: "active"
+#   notes: "価格に上限なし — 更新前に再検討"

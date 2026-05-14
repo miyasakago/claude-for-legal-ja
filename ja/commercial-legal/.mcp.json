@@ -1,0 +1,56 @@
+{
+  "mcpServers": {
+    "Ironclad": {
+      "type": "http",
+      "url": "https://mcp.na1.ironcladapp.com/mcp",
+      "title": "Ironclad",
+      "description": "自然言語であなたの契約リポジトリとワークフローを検索 — 期限切れ間近の MSA、解除条項、ベンダー契約 — あなたの権限の範囲内で。"
+    },
+    "DocuSign": {
+      "type": "http",
+      "url": "https://mcp.docusign.com/mcp",
+      "title": "DocuSign",
+      "description": "契約検索、ステータス追跡、署名ワークフロー。"
+    },
+    "iManage": {
+      "type": "http",
+      "url": "https://cloudimanage.com/mcp/work",
+      "title": "iManage",
+      "description": "Claude に接続されたガバナンス対応の iManage コンテンツ — 文書は iManage に留まり、アクセスは権限に紐づけられ監査可能。"
+    },
+    "TopCounsel": {
+      "type": "http",
+      "url": "https://api.techgc.co/api/mcp/topcounsel",
+      "title": "TopCounsel",
+      "description": "The L Suite による外部弁護士の推薦 — 5,000 名以上のインハウス弁護士コミュニティの評価、ランキング、専門分野の実績。"
+    },
+    "Definely": {
+      "type": "http",
+      "url": "https://mcp.uk.definely.com/api/proxy/core-mcp",
+      "title": "Definely",
+      "description": "契約構造へのライブかつ決定論的なアクセス — 定義の解決、相互参照の検証、依存関係のマッピング、構造的な差分の実行。"
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "メッセージ検索、チャンネル読み取り、ワークスペース全体での議論の発見。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive から文書を検索、読み取り、取得。"
+    }
+  },
+  "recommendedCategories": [
+    "contract-management",
+    "e-signature",
+    "legal-document-management",
+    "email",
+    "documents",
+    "chat",
+    "contract-review",
+    "outside-counsel-network"
+  ]
+}
