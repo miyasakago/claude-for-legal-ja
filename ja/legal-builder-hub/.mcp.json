@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "メッセージを検索し、チャンネルを読み取り、ワークスペース全体で議論を見つけます。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive からドキュメントを検索・読み取り・取得します。"
+    },
+    "Lawve AI": {
+      "type": "http",
+      "url": "https://mcp.lawve.ai/mcp",
+      "title": "Lawve AI",
+      "description": "実務弁護士・社内弁護士・リーガルテクノロジストが執筆した、キュレーション済みの法務 AI スキル集です。"
+    }
+  },
+  "recommendedCategories": [
+    "legal-skills-registry",
+    "chat",
+    "documents"
+  ]
+}

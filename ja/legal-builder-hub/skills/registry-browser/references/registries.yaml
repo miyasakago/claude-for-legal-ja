@@ -1,0 +1,14 @@
+# 監視対象レジストリ
+# デフォルトセット。ユーザーは /legal-builder-hub-ja:registry-browser から追加できます。
+
+registries:
+  - name: "lpm-skills"
+    url: "https://github.com/legalopsconsulting/lpm-skills"
+    description: "14 個のリーガルプロジェクトマネジメント・スキル。プラクティスエリア非依存。LegalOps Consulting 製。"
+    type: "github-repo"
+    last_synced: null
+
+  # エコシステムの成長に伴い追加:
+  # - name: "awesome-legal-skills"
+  #   url: "https://github.com/..."
+  #   type: "github-repo"

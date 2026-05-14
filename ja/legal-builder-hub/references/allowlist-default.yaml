@@ -1,0 +1,41 @@
+# legal-builder-hub-ja のデフォルト許可リスト
+# /legal-builder-hub-ja:cold-start-interview により生成されます — 信頼対象を変更するにはこのファイルを編集してください。
+# 完全なスキーマは skill-installer/references/allowlist.md を参照してください。
+#
+# セキュリティ上の注意: このデフォルトは RESTRICTIVE(制限的) — 未知のソースは拒否されます。
+# 個人開業者など IT が管理する公開元リストを持たないユーザー向けには、
+# コールドスタート・インタビューで permissive(寛容)モードへの変更を提案します。
+# セットアップを実行していない状態でこれを目にしている場合、インストーラーは
+# 下記に明示的に列挙されていないソースを拒否します。これは意図的な挙動です:
+# 特権的な法務ワークスペースに第三者コードをインストールするツールにとっては、
+# fail-closed(失敗時は拒否)が正しいデフォルトです。
+# 設定するには /legal-builder-hub-ja:cold-start-interview を実行するか、
+# トレードオフを理解した上で本ファイルを直接編集してください。
+
+mode: restrictive    # restrictive (fail-closed, デフォルト) | permissive (フラグして確認)
+
+registries:
+  - https://github.com/legalopsconsulting/lpm-skills
+  # Lawvable — ローンチパートナー。lawvable GitHub org 配下の 2 つのキュレーション済みレジストリ。
+  - https://github.com/lawvable/awesome-legal-skills
+  - https://github.com/lawvable/agent-skills
+
+publishers:
+  - legalopsconsulting
+  - lawvable
+
+connectors: []
+  # restrictive モードで空の場合、MCP コネクターを宣言するコミュニティスキルは
+  # すべて拒否されます。承認済みの MCP サーバー URL をここに追加するか、
+  # 拒否ではなくフラグして確認するために permissive モードに切り替えてください。
+
+licenses:
+  # コミュニティスキルが利用してよい SPDX ライセンス識別子。個人向けデフォルト。
+  # 展開コンテキスト(personal / firm-internal / product-embedding)に応じて
+  # コールドスタート時に設定されます。詳細は skill-installer/references/allowlist.md を参照。
+  - MIT
+  - Apache-2.0
+  - BSD-2-Clause
+  - BSD-3-Clause
+  - ISC
+  - CC0-1.0

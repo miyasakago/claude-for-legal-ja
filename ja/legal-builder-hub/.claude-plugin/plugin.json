@@ -1,0 +1,8 @@
+{
+  "name": "legal-builder-hub-ja",
+  "version": "1.0.2",
+  "description": "コミュニティ製の法務スキルを検索・評価し、インストールします。環境に何かを追加する前にセキュリティレビューゲートを通します。",
+  "author": {
+    "name": "Anthropic"
+  }
+}
