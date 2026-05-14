@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "ワークスペース全体でメッセージ検索、チャンネル閲覧、議論の検索を行います。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive からドキュメントを検索・閲覧・取得します。"
+    }
+  },
+  "recommendedCategories": [
+    "legal-research",
+    "regulatory-intelligence",
+    "documents",
+    "chat",
+    "email"
+  ]
+}

@@ -1,0 +1,19 @@
+# コメント期間トラッカー
+# NPRM が検出されたとき reg-feed-watcher が自動的に populated。
+# /regulatory-legal-ja:comments 経由で管理
+
+comments:
+  - id: CMT-001
+    regulation: "[NPRM 名 + Federal Register 引用]"
+    regulator: "[agency 名]"
+    summary: "[一文 — この規則制定が何を提案するか]"
+    link: "[Federal Register URL]"
+    comment_deadline: "2026-05-15"
+    detected: "2026-03-20"
+    decision: "undecided"  # undecided | filing | not-filing | filed | waived
+    owner: "[CLAUDE.md からのデフォルトコメント決定オーナー]"
+    owner_slack: "[Slack user ID または handle]"
+    notified: false
+    rationale: ""  # decision が下されたとき埋める
+    filed_at: null  # filed されたら ISO datetime
+    notes: ""

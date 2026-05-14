@@ -1,0 +1,8 @@
+{
+  "name": "regulatory-legal-ja",
+  "version": "1.0.2",
+  "description": "規制フィードを監視し、新規則を貴チームのポリシーライブラリと突合し、コメント締切と未解決ギャップを追跡し、月曜朝にチームが読むダイジェストを作成します。",
+  "author": {
+    "name": "Anthropic"
+  }
+}
