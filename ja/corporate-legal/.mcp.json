@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "ワークスペース全体のメッセージ検索、チャンネル読込、ディスカッションの発見。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive 上のドキュメントを検索・読込・取得。"
+    },
+    "Box": {
+      "type": "http",
+      "url": "https://mcp.box.com/mcp",
+      "title": "Box",
+      "description": "データルームおよびドキュメント管理。"
+    },
+    "iManage": {
+      "type": "http",
+      "url": "https://cloudimanage.com/mcp/work",
+      "title": "iManage",
+      "description": "ガバナンス対応の iManage コンテンツを Claude と接続 — ドキュメントは iManage に留まり、アクセスは権限制御下で監査可能。"
+    },
+    "TopCounsel": {
+      "type": "http",
+      "url": "https://api.techgc.co/api/mcp/topcounsel",
+      "title": "TopCounsel",
+      "description": "The L Suite による顧問弁護士事務所のレコメンデーション — 5,000+ 名のインハウス弁護士コミュニティの評価、ランキング、専門性に関するエビデンス。"
+    },
+    "Definely": {
+      "type": "http",
+      "url": "https://mcp.uk.definely.com/api/proxy/core-mcp",
+      "title": "Definely",
+      "description": "契約構造へのライブかつ決定論的なアクセス — 定義の解決、相互参照の検証、依存関係マッピング、構造的差分の実行。"
+    },
+    "Solve Intelligence": {
+      "type": "http",
+      "url": "https://api.solveintelligence.com/mcp/",
+      "title": "Solve Intelligence",
+      "description": "特許ワークフロー — 特許・非特許文献、法令テキスト、SEP 技術標準、先行技術、クレーム分析の検索。"
+    }
+  },
+  "recommendedCategories": [
+    "legal-document-management",
+    "virtual-data-room",
+    "contract-review",
+    "board-governance",
+    "documents",
+    "chat",
+    "email"
+  ]
+}
