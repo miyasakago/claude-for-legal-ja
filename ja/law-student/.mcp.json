@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "メッセージ検索、チャンネル閲覧、ワークスペース横断でのディスカッション検索。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive 上のドキュメントを検索・読み取り・取得します。"
+    },
+    "CourtListener": {
+      "type": "http",
+      "url": "https://mcp.courtlistener.com/",
+      "title": "CourtListener",
+      "description": "Free Law Project が提供する法律リサーチ・プラットフォーム — 米国の数百万件の判例、PACER ドケット、裁判官プロフィール、口頭弁論、引用検証に対応。"
+    },
+    "Descrybe": {
+      "type": "http",
+      "url": "https://mcp.descrybe.com/mcp",
+      "title": "Descrybe",
+      "description": "Primary law(一次法源)リサーチ — 概念や文言での判例検索、引用からの判例特定、根拠抽出、判例の取扱い(treatment)確認、引用文言の検証。"
+    }
+  },
+  "recommendedCategories": [
+    "legal-research",
+    "case-law",
+    "documents",
+    "chat"
+  ]
+}
