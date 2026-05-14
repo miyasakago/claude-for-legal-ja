@@ -1,0 +1,64 @@
+# ポートフォリオ台帳 — litigation-legal-ja
+#
+# `matters:` 配下に案件ごとに1エントリ。/portfolio-status ロールアップの真の情報源。
+# クローズした案件もこのファイル内に残し(検索可能な履歴)、デフォルトでは
+# アクティブロールアップから除外されます。編集は /litigation-legal-ja:matter-intake、
+# /matter-update、/matter-close 経由を推奨 — 直接編集も可能ですが、
+# 案件の history.md に変更内容を残してください。
+#
+# ──────────────────────────────────────────────────────────────────────────
+# スキーマ
+# ──────────────────────────────────────────────────────────────────────────
+# - id:                string — slug、安定識別子; matters/[slug]/ フォルダと一致
+#   name:              string — 表示名
+#   type:              contract | employment | ip | regulatory | investigation | product | other
+#   role:              plaintiff | defendant | claimant | respondent | investigated
+#   counterparty:      string
+#   jurisdiction:      string — 裁判所または規制当局
+#   status:            threatened | active | discovery | trial | appeal | closed
+#                      (解決種別はクローズ時に `outcome` で別途記録;
+#                       和解で解決した場合は /matter-close が `outcome: settled` を書き込む)
+#   stage:             string — 自由記述のサブステージ(例: "pleadings", "fact discovery")
+#   source:            demand-letter | complaint-served | subpoena | regulator-inquiry | internal-report | pre-suit-threat
+#   outside_counsel:
+#     firm:            string | null
+#     lead:            string | null
+#     email:           string | null     # v2 で追加 — /oc-status メール起案で使用
+#     engagement:      signed | pending | none
+#   conflicts:
+#     status:          cleared | pending | not-run | waived
+#     method:          corporate-legal | outside-counsel | system-check | informal | other
+#     cleared_by:      string | null
+#     cleared_date:    YYYY-MM-DD | null
+#     override:                                                          # v2.1 で追加
+#       by:              string | null        # バイパスを承認した者
+#       date:            YYYY-MM-DD | null
+#       rationale:       string | null        # 恒久的な記録; 自動失効しない
+#   risk:              critical | high | medium | low   (CLAUDE.md のリスクマトリクスに基づく)
+#   materiality:       reserved | disclosed | monitored | none
+#   exposure_range:    string — 例: "$2M–$5M" や "<$250K"
+#   internal_owners:
+#     business_lead:   string | null
+#     hr_partner:      string | null
+#     comms_contact:   string | null
+#   legal_hold:
+#     issued:          bool
+#     issued_date:     YYYY-MM-DD | null
+#     scope:           string | null
+#     custodians:      [string]            # v2 で追加
+#     last_refresh:    YYYY-MM-DD | null   # v2 で追加
+#     next_refresh:    YYYY-MM-DD | null   # v2 で追加
+#     released:        YYYY-MM-DD | null   # v2 で追加
+#   related_matters:   [string] | null     # v2 で追加 — 関連案件 slug のリスト
+#   opened:            YYYY-MM-DD
+#   next_deadline:     YYYY-MM-DD | null
+#   last_updated:      YYYY-MM-DD
+#   path:              string — "matters/[slug]/"
+#
+# クローズした案件には追加で以下を付与:
+#   closed:            YYYY-MM-DD
+#   outcome:           settled | dismissed | judgment-for-us | judgment-against-us | withdrawn | consolidated | other
+#   final_cost:        string | number
+# ──────────────────────────────────────────────────────────────────────────
+
+matters: []

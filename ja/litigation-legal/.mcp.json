@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "ワークスペース全体のメッセージ検索、チャンネル閲覧、ディスカッション検索を行います。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive のドキュメントを検索・閲覧・取得します。"
+    },
+    "Everlaw": {
+      "type": "http",
+      "url": "https://api.everlaw.com/v1/mcp",
+      "title": "Everlaw",
+      "description": "Everlaw プロジェクトのドキュメントを検索・整理・取得します — メタデータ、キーワード、文書種別 — レビューリンク付き。"
+    },
+    "TopCounsel": {
+      "type": "http",
+      "url": "https://api.techgc.co/api/mcp/topcounsel",
+      "title": "TopCounsel",
+      "description": "The L Suite による外部弁護士の推薦 — 5,000名以上の社内弁護士コミュニティの評価、ランキング、専門領域の実績。"
+    },
+    "CourtListener": {
+      "type": "http",
+      "url": "https://mcp.courtlistener.com/",
+      "title": "CourtListener",
+      "description": "Free Law Project の法律調査プラットフォーム — 数百万件の米国判決、PACER ドケット、裁判官プロフィール、口頭弁論、引用の検証。"
+    },
+    "Aurora": {
+      "type": "http",
+      "url": "https://mcp.ai.consilio.com",
+      "title": "Aurora",
+      "description": "読み取り専用の Consilio eDiscovery — 案件検索、ワークスペース一覧、全文検索、AI による横断的調査、すべての記録は出典に紐付け。"
+    },
+    "Trellis": {
+      "type": "http",
+      "url": "https://mcp.trellis.law/anthropic",
+      "title": "Trellis",
+      "description": "米国最大の州第一審裁判所データセット — ドケット、判決、評決、提出書面、裁判官および相手方代理人の分析、専門家証人の調査。"
+    }
+  },
+  "recommendedCategories": [
+    "ediscovery",
+    "legal-research",
+    "case-law",
+    "court-analytics",
+    "outside-counsel-network",
+    "documents",
+    "chat"
+  ]
+}
