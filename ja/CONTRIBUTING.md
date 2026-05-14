@@ -1,10 +1,37 @@
-# Claude for Legal への貢献ガイド
+# Claude for Legal(日本語翻訳版)への貢献ガイド
 
-本リポジトリにプラグインを書く・編集する人向けのメモです。出力品質にとって最も重要な設計原則に絞った、短いガイドです。スタイルガイドではありません。
+本ガイドは **日本語翻訳版リポジトリ([miyasakago/claude-for-legal-ja](https://github.com/miyasakago/claude-for-legal-ja))** の貢献に関するものです。
 
-## 初めての PR を出す前に
+## 貢献の種類と提出先
 
-CLA に署名してください。初めてプルリクエストを開くと、CLA Assistant ボットが [CLA](CLA.md) へのリンクとともにコメントし、確認を求めます。`I have read the CLA Document and I hereby sign the CLA` と返信するとチェックがパスします。これは一度だけ行えば十分です。
+| 貢献の種類 | 提出先 |
+|---|---|
+| **翻訳の誤りの修正・改善** | 本翻訳版リポジトリへの PR |
+| **訳語の統一・GLOSSARY.md の改善** | 本翻訳版リポジトリへの PR |
+| **新しいプラグイン・スキルの追加、ロジックの変更** | **元著作物([anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal))への PR**(merge 後、本翻訳版に翻訳が反映されます) |
+| **プラグインのバグ修正・機能改善** | **元著作物への PR** |
+
+**翻訳起因の問題**(誤訳、不自然な日本語、訳語不統一など)は本翻訳版へ、**プラグイン本体の問題**(ロジック、スキル設計、新機能)は元著作物へ提出してください。
+
+## 元著作物に PR を出す場合の CLA
+
+元著作物([anthropics/claude-for-legal](https://github.com/anthropics/claude-for-legal))に PR を出す場合は、Anthropic の CLA(Contributor License Agreement)への署名が必要です。初回 PR 時に CLA Assistant ボットが指示を出します。
+
+**本翻訳版リポジトリへの貢献には CLA は不要**です(本翻訳版は個人による任意翻訳プロジェクトであり、CLA の運用主体ではありません)。ただし、本翻訳版に貢献いただいた内容は Apache License 2.0 のもとで配布されます。
+
+## 翻訳に貢献するときの注意
+
+1. **[TRANSLATION_POLICY.md](../TRANSLATION_POLICY.md) を読む** — 翻訳しないもの、米国法ドクトリンの扱い、命名規則を厳守。
+2. **[GLOSSARY.md](../GLOSSARY.md) を読む** — 訳語統一のためのリスト。新規用語はここに追加してから翻訳を反映。
+3. **インラインタグは英語のまま維持** — `[verify]`, `[review]`, `[PLACEHOLDER]` 等は Claude のパース対象。
+4. **コマンドパスは `-ja` 接尾辞** — 例: `/commercial-legal-ja:review`。
+5. **設定パスは `claude-for-legal-ja/<plugin>-ja`** — 元の英語版とは異なる。
+
+---
+
+以下は元著作物の `CONTRIBUTING.md` の翻訳です。**プラグインそのものを編集・追加する際の設計原則**を述べたもので、翻訳作業者にとっても背景理解として有用です。
+
+---
 
 ## 設計原則: SKILL.md が正しい挙動をエンコードし、CLAUDE.md のガードレールは安全網である
 
