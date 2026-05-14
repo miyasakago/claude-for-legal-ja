@@ -1,0 +1,42 @@
+{
+  "mcpServers": {
+    "Solve Intelligence": {
+      "type": "http",
+      "url": "https://api.solveintelligence.com/mcp/",
+      "title": "Solve Intelligence",
+      "description": "特許ワークフロー — 特許文献および非特許文献、法令、SEP 技術規格、先行技術、クレーム分析の検索。"
+    },
+    "CourtListener": {
+      "type": "http",
+      "url": "https://mcp.courtlistener.com/",
+      "title": "CourtListener",
+      "description": "Free Law Project の法律調査プラットフォーム — 米国判例数百万件、PACER ドケット、判事プロフィール、口頭弁論、引用検証。"
+    },
+    "Descrybe": {
+      "type": "http",
+      "url": "https://mcp.descrybe.com/mcp",
+      "title": "Descrybe",
+      "description": "一次法調査 — 概念や文言による判例検索、引用からの判例特定、典拠抽出、取扱状況確認、引用文言の検証。"
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "メッセージ検索、チャンネル閲覧、ワークスペース全体のディスカッション検索。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive 内の文書を検索、閲覧、取得。"
+    }
+  },
+  "recommendedCategories": [
+    "ip-management",
+    "legal-research",
+    "case-law",
+    "documents",
+    "chat",
+    "email"
+  ]
+}
