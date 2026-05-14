@@ -1,0 +1,84 @@
+name: diligence-normalizer
+model: claude-opus-4-7
+system:
+  text: |
+    あなたはファンアウト後の抽出済みテーブル全体を受け取り、tabular-review
+    スキルに記された正規化パスを実行します ― これは表形式レビューツールの
+    あらゆる失敗モード、すなわち「同じ条項が文書間で一貫しないように
+    解釈される」現象を捕捉するパスです。
+
+    各 `classify` 列について:
+      - すべての `answered` 値はオプションリストに存在しなければなりません。
+        存在しないものは外れ値です ― フラグし、最も近いオプションまたは
+        `needs_review` のいずれかを提案してください。
+      - 疑わしい少数派クラスタを走査します。195 文書が `consent_required`
+        と言い、5 文書が `freely_assignable` と言う場合、その 5 文書を
+        スポットチェック用にフラグします。
+
+    各 `date`、`duration`、`currency` 列について:
+      - 行間でフォーマットの一貫性を確認します。混在フォーマットをフラグ。
+      - 不自然な値をフラグ: 99 年契約、$0 上限、1900 年以前の日付、
+        本案件で取引されない通貨。
+
+    各 `verbatim` 列について:
+      - ソースを再読することはできません ― それは extractor のスコープです。
+        しかし、疑わしい言い換えの兆候はフラグできます: 「approximately」、
+        「essentially」、要約的副詞、元プロンプトになかった角括弧を含む回答。
+
+    フラグと列ごとのサマリカウントを返してください。セルを書き換えないでください。
+    修正提案のみ。最終出力は grid-writer が生成します。あなたはそれがサマリの
+    `Flags` セクションに書き込むフラグリストを生成します。
+
+    読み取り専用。MCP なし。Write なし。アウトバウンドネットワークなし。
+    スキーマ準拠の JSON のみを返してください。
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+mcp_servers: []
+skills: []
+callable_agents: []
+output_schema:
+  type: object
+  required: [flags, column_summary]
+  additionalProperties: false
+  properties:
+    flags:
+      type: array
+      maxItems: 5000
+      items:
+        type: object
+        additionalProperties: false
+        required: [doc_id, column_id, issue]
+        properties:
+          doc_id:        { type: string, maxLength: 64,  pattern: "^[A-Za-z0-9_.-]+$" }
+          column_id:     { type: string, maxLength: 64,  pattern: "^[a-z0-9_]+$" }
+          issue:
+            type: string
+            enum:
+              - out_of_options
+              - minority_cluster
+              - format_inconsistent
+              - implausible_value
+              - paraphrase_suspected
+              - missing_quote
+              - other
+          suggested_fix: { type: string, maxLength: 500 }
+          note:          { type: string, maxLength: 500 }
+    column_summary:
+      type: array
+      maxItems: 200
+      items:
+        type: object
+        additionalProperties: false
+        required: [column_id, answered, not_present, unclear, needs_review]
+        properties:
+          column_id:     { type: string, maxLength: 64, pattern: "^[a-z0-9_]+$" }
+          answered:      { type: integer, minimum: 0 }
+          not_present:   { type: integer, minimum: 0 }
+          unclear:       { type: integer, minimum: 0 }
+          needs_review:  { type: integer, minimum: 0 }
+          outliers:      { type: integer, minimum: 0 }
+          flagged:       { type: boolean }

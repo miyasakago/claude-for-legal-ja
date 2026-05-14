@@ -1,0 +1,50 @@
+# Docket Watcher — Managed Agent クックブック
+#
+# litigation-legal Claude Code プラグインの `docket-watcher` エージェントと同一。
+# このマニフェストは、ディスク上のプラグインに対して正規 system prompt とスキルを
+# 解決し、Single Source of Truth を維持します。
+
+name: docket-watcher
+model: claude-opus-4-7
+
+system:
+  file: ../../litigation-legal/agents/docket-watcher.md
+  append: |
+    あなたはプラットフォームチームのワークフローエンジンの背後でヘッドレスに動作します。
+    ファイルは ./out/ に生成してください。インタラクティブなセッションを想定しないでください。
+    デプロイチームの litigation-legal CLAUDE.md にある成果物ヘッダーを先頭付加してください。
+
+    あなたの出力はリードであり、法的結論ではありません。計算された期限はリード
+    であって、カレンダーエントリーではありません。裁判所の期限ルールは法域、
+    裁判所、裁判官、ローカルルールによって異なり、standing order や事件固有の
+    case management order で日常的に変更されます。裁判所の期限を見逃すと医療過誤
+    に相当する結果につながります。資格を有する弁護士が、ドケットに登録される前に、
+    計算された期限を裁判所の実際のルールおよび事件固有の命令と照らして検証します。
+
+    提出書面の分類はヒューリスティクスです。エージェントが誤分類した提出書面は、
+    誤った期限ルールを生成しかねません。ドケッティング担当の弁護士が書面を読みます。
+    出力をクリーンに読ませるためにこれらのガードレールをレポートで和らげないでください ―
+    声高であることが正しい。
+
+tools:
+  # Orchestrator はローカル限定ツールのみを使用。MCP と web_fetch はサブエージェントのリーフが
+  # 保持(callable_agents 参照)。
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+      - { name: glob, enabled: true }
+
+mcp_servers:
+  - { type: url, name: trellis,       url: "${TRELLIS_MCP_URL}" }
+  - { type: url, name: courtlistener, url: "${COURTLISTENER_MCP_URL}" }
+  - { type: url, name: gdrive,        url: "${GDRIVE_MCP_URL}" }
+
+skills:
+  - { from_plugin: ../../litigation-legal }
+
+callable_agents:
+  - { manifest: ./subagents/docket-reader.yaml }
+  - { manifest: ./subagents/deadline-mapper.yaml }
+  - { manifest: ./subagents/tracker-writer.yaml }   # Write を持つ唯一のリーフ

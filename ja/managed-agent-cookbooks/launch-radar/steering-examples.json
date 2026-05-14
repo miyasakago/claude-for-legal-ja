@@ -1,0 +1,5 @@
+[
+  { "event": "Scan tracker for launches in next 6 weeks", "description": "週次レーダー — デフォルト地平線、全面" },
+  { "event": "Triage: new Agent autonomy feature (PROJ-1234), is this a problem?", "description": "キャリブレーションテーブルに対する単一チケットトリアージ — is-this-a-problem パスをエンドツーエンドで実行" },
+  { "event": "Re-scan after roadmap reprioritization, horizon: 4 weeks", "description": "プランニングミーティングでローンチ日が入れ替わった後のオフサイクルの再スキャン" }
+]

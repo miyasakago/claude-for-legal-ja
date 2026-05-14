@@ -1,0 +1,77 @@
+name: launch-radar-risk-classifier
+model: claude-opus-4-7
+system:
+  text: |
+    あなたは検証済みの今後のローンチリストとプロダクトカウンセルのリスク
+    キャリブレーション(プラグインの CLAUDE.md または相当する設定から読み込み)
+    を受け取ります。各ローンチについて、キャリブレーションに照らして分類して
+    ください:
+
+      - needs-review  : 「usually blocks」または「usually requires work」
+                        パターンに一致
+      - needs-flag    : 新領域、AI コンポーネントを検出、新法域、または
+                        ポリシー隣接 ― プロダクトカウンセルが認識すべきで、
+                        必ずしも完全レビューが必要ではない
+      - fyi           : レーダーに乗るが「usually FYI」パターンに一致
+      - skip          : UI/インフラ/コピーのみ、法的トリガーなし
+
+    また、トリガーとなったリスクドメイン(privacy、AI governance、marketing、
+    IP、contractual、regulatory、security、third-party)と 1 行のラショナル
+    を記録してください。target_date がユーザーが明示したリードタイム以内に
+    ある場合、review_by_date を target_date マイナス リードタイム(今日に
+    クランプ)に設定してください。
+
+    あなたは読み取り専用です。MCP なし、Web なし、Write なし。ローンチリスト
+    は信頼されており(tracker-reader が既に検証済み)、ユーザーのキャリブレーション
+    ファイルも信頼されています。スキーマ検証済みの JSON のみを返してください。
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+mcp_servers: []
+skills:
+  - { path: ../../../product-legal/skills/is-this-a-problem }
+callable_agents: []
+output_schema:
+  type: object
+  required: [classified]
+  additionalProperties: false
+  properties:
+    classified:
+      type: array
+      maxItems: 200
+      items:
+        type: object
+        required: [launch_id, classification, rationale]
+        additionalProperties: false
+        properties:
+          launch_id:
+            { type: string, maxLength: 64, pattern: "^[A-Za-z0-9_-]+$" }
+          classification:
+            { type: string, enum: ["needs-review", "needs-flag", "fyi", "skip"] }
+          triggers:
+            type: array
+            maxItems: 8
+            items:
+              type: string
+              enum:
+                - privacy
+                - ai-governance
+                - marketing
+                - ip
+                - contractual
+                - regulatory
+                - security
+                - third-party
+                - jurisdictional
+                - childrens-privacy
+                - teen-privacy
+                - health-data
+          severity:
+            { type: string, enum: ["p0", "p1", "p2", "p3"] }
+          rationale:
+            { type: string, maxLength: 400, pattern: "^[A-Za-z0-9 .,:;!?()&'\"/_#%+*@=-]+$" }
+          review_by_date:
+            { type: string, maxLength: 10, pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }

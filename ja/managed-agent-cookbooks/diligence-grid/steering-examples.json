@@ -1,0 +1,5 @@
+[
+  { "event": "Review folder /02-Contracts against schema ma-diligence", "description": "Grid モード — 重要契約フォルダに対して M&A デューデリジェンス標準列セットを実行し、表形式レビュー CSV 一式とサマリを生成します。" },
+  { "event": "Watch VDR for new uploads since 2026-05-01, flag Material Contracts and IP", "description": "Watch モード — カットオフ以降の全新規文書を列挙し、リクエストリストカテゴリに照らして分類し、高優先度のものをフラグし、更新レポートを書き出します。" },
+  { "event": "Re-run grid for documents [DOC-001, DOC-002, DOC-003] with added column termination_for_convenience", "description": "Grid モード — スキーマ編集 + 文書サブセットへの対象限定再実行。未対象文書の既存行は保持します。" }
+]

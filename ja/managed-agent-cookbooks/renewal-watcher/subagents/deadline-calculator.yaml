@@ -1,0 +1,78 @@
+name: renewal-deadline-calculator
+model: claude-opus-4-7
+system:
+  text: |
+    あなたは repo-reader からの検証済み契約リストを受け取ります。純粋な
+    計算を行います: 各契約について、days-to-deadline(`cancel_by_date`
+    または `expiration_date` のうち早い方 マイナス 今日)を計算し、緊急度
+    を分類し、デプロイチームの renewal-tracker 設定 ― 先読みウィンドウ、
+    更新価格と自動更新キャップに関するプレイブックポジション、エスカレーション
+    マトリクス ― に照らしてクロスリファレンスします。
+
+    各契約をちょうど 1 つの緊急度ティアに分類してください:
+      - `overdue`       — 期限を既に経過
+      - `next_30_days`  — 1〜30 日先
+      - `30_to_60_days` — 31〜60 日先
+      - `60_to_90_days` — 61〜90 日先
+      - `90_to_180_days`— 91〜180 日先
+      - `outside_window`— 設定された先読みを超える(出力から除外)
+
+    各アラートについて、デプロイチームのプレイブック逸脱(キャップのない
+    更新価格エスカレータ、短い通知ウィンドウ、通知メカニズムとチームの
+    標準とのミスマッチなど)が存在するか、エスカレーションマトリクスが
+    指名承認者へのルーティングを要求するかを判定してください。
+
+    あなたは純粋な計算です。MCP なし、Web なし、Write なし。渡された構造化
+    JSON とディスク上のプレイブック設定ファイルを読みます。スキーマ検証
+    済みの JSON のみを返してください。
+
+tools:
+  - type: agent_toolset_20260401
+    default_config: { enabled: false }
+    configs:
+      - { name: read, enabled: true }
+      - { name: grep, enabled: true }
+      - { name: glob, enabled: true }
+
+mcp_servers: []
+skills: []
+callable_agents: []
+
+output_schema:
+  type: object
+  required: [as_of, alerts]
+  additionalProperties: false
+  properties:
+    as_of: { type: string, maxLength: 10, pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+    alerts:
+      type: array
+      maxItems: 500
+      items:
+        type: object
+        additionalProperties: false
+        required: [contract_id, deadline_type, deadline_date, days_remaining, urgency]
+        properties:
+          contract_id:    { type: string, maxLength: 64, pattern: "^[A-Za-z0-9 ._/:-]+$" }
+          counterparty:   { type: string, maxLength: 200, pattern: "^[A-Za-z0-9 .,&'()_/-]+$" }
+          deadline_type:  { type: string, maxLength: 24,  pattern: "^(cancel_by|expiration|notice_window)$" }
+          deadline_date:  { type: string, maxLength: 10,  pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+          days_remaining: { type: integer, minimum: -3650, maximum: 3650 }
+          urgency:        { type: string, maxLength: 24,  pattern: "^(overdue|next_30_days|30_to_60_days|60_to_90_days|90_to_180_days)$" }
+          recommended_action:
+            type: string
+            maxLength: 300
+          escalation_needed: { type: boolean }
+          escalation_to:
+            type: string
+            maxLength: 120
+          playbook_deviations:
+            type: array
+            maxItems: 20
+            items:
+              type: object
+              additionalProperties: false
+              required: [clause, position]
+              properties:
+                clause:   { type: string, maxLength: 64,  pattern: "^[A-Za-z0-9_ -]+$" }
+                position: { type: string, maxLength: 300 }
+                severity: { type: string, maxLength: 16,  pattern: "^(minor|moderate|critical)$" }
