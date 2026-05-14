@@ -1,0 +1,112 @@
+{
+  "name": "claude-for-legal-ja",
+  "owner": {
+    "name": "Anthropic"
+  },
+  "plugins": [
+    {
+      "name": "commercial-legal-ja",
+      "source": "./commercial-legal",
+      "description": "ベンダー契約、NDA、SaaS サブスクリプション契約を、貴社の売り手側・買い手側プレイブックに照らしてレビューします。更新期限・解約期限を見逃す前に追跡し、エスカレーションを適切な承認者にルーティング、レビュー結果をビジネス側が実際に読むサマリーへ変換します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "privacy-legal-ja",
+      "source": "./privacy-legal",
+      "description": "処理活動のトリアージ、PIA の生成、管理者・処理者のいずれの立場でも DPA をレビュー、法定期限内の DSAR 対応ドラフト、ポリシーと実務の乖離を継続的に監視します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "product-legal-ja",
+      "source": "./product-legal",
+      "description": "貴社のリスク評価基準に照らした製品ローンチレビュー、「これは問題ですか?」の質問に数分で回答、根拠が必要なマーケティング表現の検出、法務レビューが必要なローンチの事前察知を行います。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "corporate-legal-ja",
+      "source": "./corporate-legal",
+      "description": "M&A デューデリジェンスを引用付きの表形式レビューで大規模に実施、開示別紙とクロージング・チェックリストを作成、取締役会の同意書・議事録をハウスフォーマットで起案、複数法域にまたがる法人コンプライアンス期限を追跡します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "employment-legal-ja",
+      "source": "./employment-legal",
+      "description": "採用と解雇を法域別リスクフラグでレビュー、米国の州別テストに沿った労働者区分の判定、休職期限の見逃し防止、内部調査の実施、法域差を反映した社内規程の起案を支援します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "regulatory-legal-ja",
+      "source": "./regulatory-legal",
+      "description": "規制情報フィードを監視し、新規ルールを社内ポリシーライブラリと差分比較、パブコメ期限と未対応ギャップを追跡、月曜朝にチームが読むダイジェストを作成します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "ai-governance-legal-ja",
+      "source": "./ai-governance-legal",
+      "description": "提案された AI ユースケースをレジストリと照らしてトリアージ、適用される各規制レジームにわたる影響評価を実施、ベンダー AI 規約をデータ学習利用・責任のギャップ観点でレビュー、AI ポリシーを実務に追随させます。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "litigation-legal-ja",
+      "source": "./litigation-legal",
+      "description": "訴訟ポートフォリオ(案件、期限、保全命令、要求書、外部弁護士)を管理し、実務作業(クレームチャート(特許・民事)、時系列表、デポジション準備、特権ログ、ブリーフ起案)を実行します。社内・法律事務所・個人事務所いずれの訴訟スタイルにも適応します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "law-student-ja",
+      "source": "./law-student",
+      "description": "ソクラテス式問答による演習、判例ブリーフ、アウトライン作成、貴方の法域に合わせたバー試験対策セッション、IRAC 演習の採点、学習スケジュールの策定を、すべて貴方の代わりに書くことなく支援します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "legal-clinic-ja",
+      "source": "./legal-clinic",
+      "description": "クリニックの立ち上げ、学生のオンボーディング、構造化された依頼者インテーク、マルプラクティス警戒に留意した期限管理、学期末の引き継ぎを ABA 公式意見 512 の枠組み内で実施します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "legal-builder-hub-ja",
+      "source": "./legal-builder-hub",
+      "description": "コミュニティ製の法務スキルを検索・評価・インストール — 環境に取り込む前にセキュリティレビュー・ゲートを実施します。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "ip-legal-ja",
+      "source": "./ip-legal",
+      "description": "商標クリアランスと特許 FTO の予備調査、警告状(C&D)と DMCA テイクダウンの起案・トリアージ(送付側・受領側両対応)、OSS コンプライアンスチェック、IP 条項レビュー、登録・更新期限の追跡を行います。",
+      "author": {
+        "name": "Anthropic"
+      }
+    },
+    {
+      "name": "cocounsel-legal-ja",
+      "source": "./external_plugins/cocounsel-legal",
+      "description": "CoCounsel Legal は、Westlaw および Practical Law へのインライン・リンク付き引用を備えた包括的な Westlaw ディープリサーチレポートを提供します。",
+      "author": {
+        "name": "Thomson Reuters"
+      }
+    }
+  ]
+}
