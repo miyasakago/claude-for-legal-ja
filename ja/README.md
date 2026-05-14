@@ -1,4 +1,16 @@
-# Claude for Legal
+# Claude for Legal(日本語翻訳版 / Unofficial Japanese Translation)
+
+> [!WARNING]
+> **これは非公式の日本語翻訳版です。** Anthropic PBC が公認または保証するものではありません。
+> - **元著作物(公式 / 英語):** https://github.com/anthropics/claude-for-legal
+> - **本翻訳版:** https://github.com/miyasakago/claude-for-legal-ja
+> - **ライセンス:** [Apache License 2.0](LICENSE)(元と同一)
+> - **派生物としての告知・変更内容:** [NOTICE.md](NOTICE.md)
+> - 翻訳の正確性は保証しません。法的判断にあたっては必ず英語原文をご参照ください。
+> - 本派生物は米国法務実務を題材としており、**日本法へのローカライズは行っていません**。
+> - **Claude**, **Anthropic** ほか本書中の各社製品名は各社の商標です(詳細は [NOTICE.md](NOTICE.md))。
+
+---
 
 最もよく見られる法務ワークフロー — 社内商事、プライバシー、プロダクト、コーポレート、雇用、訴訟、規制、AI ガバナンス、IP、そして法務実務の学習側面(ロースクールクリニックと学生) — のリファレンス・エージェント、スキル、データコネクター集です。
 
