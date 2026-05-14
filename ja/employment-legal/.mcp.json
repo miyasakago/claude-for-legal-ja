@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "ワークスペース横断でメッセージを検索し、チャンネルを読み、議論を探します。"
+    },
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Google Drive 内の文書を検索・閲覧・取得します。"
+    }
+  },
+  "recommendedCategories": [
+    "hris",
+    "documents",
+    "chat",
+    "email"
+  ]
+}
