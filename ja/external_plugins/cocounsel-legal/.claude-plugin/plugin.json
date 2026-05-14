@@ -1,0 +1,9 @@
+{
+  "name": "cocounsel-legal-ja",
+  "version": "0.1.0",
+  "description": "CoCounsel Legal は、Westlaw および Practical Law へのインライン・リンク付き引用を備えた包括的な Westlaw ディープリサーチレポートを提供します。",
+  "author": {
+    "name": "Thomson Reuters",
+    "email": "cocounselsupport@tr.com"
+  }
+}
