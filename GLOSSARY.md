@@ -42,6 +42,9 @@
 | Associate | アソシエイト | |
 | Paralegal | パラリーガル | |
 | Practice area | プラクティスエリア | 法務専門分野 |
+| Commercial (legal) | 商取引法務 | 企業の事業活動・商取引に関わる法務実務。プラグイン名 `commercial-legal` の訳。「コマーシャル契約」は CM 契約と誤読されうるため不可 |
+| Commercial counsel | 商取引法務カウンセル | 上記を担う社内弁護士・法務担当 |
+| Commercial contracts | 商取引契約 | ベンダー契約・NDA・SaaS 契約など日々の取引契約。文書そのものを指すときに使用 |
 | Privileged | 秘匿特権の対象 | |
 | Attorney-Client Privilege | 弁護士・依頼者間秘匿特権 | |
 | Attorney Work Product | Attorney Work Product(弁護士成果物の保護法理) | 米国特有概念、原文維持を推奨 |

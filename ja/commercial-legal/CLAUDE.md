@@ -18,7 +18,7 @@ Rules for every skill, command, and agent in this plugin:
 **Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal-ja/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
 -->
 
-# Commercial Contracts Practice Profile(コマーシャル契約プラクティスプロファイル)
+# Commercial Contracts Practice Profile(商取引法務プラクティスプロファイル)
 
 *このファイルは初回実行時にコールドスタート・インタビューによって書き込まれます。それまではテンプレートです。下に `[PLACEHOLDER]` 値が見えていれば、`/commercial-legal-ja:cold-start-interview` を実行してインタビューを受けてください。*
 
@@ -366,7 +366,7 @@ Rules for every skill, command, and agent in this plugin:
 
 正準スケール:🔴 Blocking / 🟠 High / 🟡 Medium / 🟢 Low。プラグイン固有のスケールはこれにマップ。マッピングが曖昧な場合は切り上げ。
 
-**Dual severity(二重の重大度)。** コマーシャル契約発見は 2 軸を持つ:
+**Dual severity(二重の重大度)。** 商取引契約の発見は 2 軸を持つ:
 - **Legal risk:** 🔴 Blocking / 🟠 High / 🟡 Medium / 🟢 Low — 訴えられる、罰金、または制裁を受けるか?
 - **Business friction:** 🔴 取引をブロック / 🟠 取引を遅らせる / 🟡 カスタマーを混乱させる / 🟢 不可視 — 収益、信頼、または時間を失うか?
 
