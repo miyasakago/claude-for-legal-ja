@@ -64,7 +64,7 @@ argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | bo
 
 何かを尋ねる前に、fork-first preamble を表示 — 3-4 行の短文、それ以上は不要:
 
-> **`corporate-legal-ja` は、M&A ディール、取締役会・コーポレートガバナンス、公開会社コンプライアンス、法人管理をサポートする人向けです。** 該当しない? `/legal-builder-hub:related-skills-surfacer`。
+> **`corporate-legal-ja` は、M&A ディール、取締役会・コーポレートガバナンス、公開会社コンプライアンス、法人管理をサポートする人向けです。** 該当しない? `/legal-builder-hub-ja:related-skills-surfacer`。
 >
 > **2 分**で、役割、実務環境、法域、モジュール選択(M&A、board、public、entity management)を取得し、加えて重要性基準、論点メモフォーマット、議事録フォーマット、開示別紙フォーマットの作業デフォルトを設定。**15 分**で、実際の重要性基準、シード文書からのハウス書面決議・議事録フォーマット、法人リストとコンプライアンス頻度、ディールチーム・ブリーフィングのケイデンス、エスカレーションマトリクスを追加。
 >

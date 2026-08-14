@@ -35,7 +35,7 @@ argument-hint: "[--build | --update | --status | --cram]"
 
 プランは意見であり、ドクトリンではない。スキルは何が estimate かを明確に述べる:
 
-- **Time-per-topic estimates** は一般ガイダンス(典型的な Barbri/Themis/Kaplan 重みづけに基づく)。Estimate としてフラグ — 学生の実際ペースは異なる。
+- **Time-per-topic estimates** は一般ガイダンス(典型的な商用 prep course 重みづけに基づく)。Estimate としてフラグ — 学生の実際ペースは異なる。
 - **Subject weightings** は学生自身の述べた弱点科目とセッション履歴から導出。Confident。
 - **Cram モードの high-yield-topic 優先付け** は複数年バー試験 release パターン(MBE/MEE 科目頻度)に基づく。「これが試験に definitely 出る」主張には `[UNCERTAIN — past frequency is not a prediction]` をフラグ。
 
@@ -89,11 +89,11 @@ argument-hint: "[--build | --update | --status | --cram]"
 
 ### Step 2.5: Supplement vs. replace(prep-course ユーザー)
 
-`~/.claude/plugins/config/claude-for-legal-ja/law-student-ja/CLAUDE.md` → `Prep course` が **Barbri**、**Themis**、**Kaplan**、または他の structured prep course(つまり `self` または `N/A` ではない)の場合、学生はすでに prep-course カレンダーを持つ。本スキルのプランは二つの役割のどちらかを選ぶ必要 — prep course と並行してフルな並列カリキュラムは学生を burn out させずに走らせられない。
+`~/.claude/plugins/config/claude-for-legal-ja/law-student-ja/CLAUDE.md` → `Prep course` が structured な商用 prep course 名(つまり `self` または `N/A` ではない)の場合、学生はすでに prep-course カレンダーを持つ。本スキルのプランは二つの役割のどちらかを選ぶ必要 — prep course と並行してフルな並列カリキュラムは学生を burn out させずに走らせられない。
 
 問う、一質問、待つ:
 
-> プロファイルでは [Barbri / Themis / Kaplan] と。彼らは各科目とタスクをスケジュールした day-by-day カレンダーを公開しています。このプランの動き方は二通り — 一つ選んでください:
+> プロファイルでは [prep course 名] と。彼らは各科目とタスクをスケジュールした day-by-day カレンダーを公開しています。このプランの動き方は二通り — 一つ選んでください:
 >
 > 1. **Supplement。** Prep course が primary カリキュラム。このプランはギャップを埋める: 弱点科目の追加 MBE ドリル、targeted エッセイ練習、見逃したトピックのフラッシュカード・ループ。Prep course カレンダーを再構築せず、その上にレイヤー。
 > 2. **Replace。** Prep course カレンダーに従っていない(pacing が life に合わない等)。プラン全体を構築 — 科目、時間、フェーズ、スケジュール — そして prep course カレンダーをドロップ。
@@ -246,5 +246,5 @@ session_history:
 
 - **合格を保証。** プランは足場。仕事はあなた。
 - **試験を予測。** Cram モードは歴史的科目頻度を使う;high-yield ≠ guaranteed-tested。
-- **Prep course スケジュールの代替。** Barbri/Themis/Kaplan に乗っているなら、このプランは supplement 可能 — 二つのフルカリキュラムを互いに走らせない。一つを primary として使う。
+- **Prep course スケジュールの代替。** 商用 prep course に乗っているなら、このプランは supplement 可能 — 二つのフルカリキュラムを互いに走らせない。一つを primary として使う。
 - **Life をスケジュール。** 利用可能時間はあなたが伝えるもの。Overstate すれば、プランは week 2 で壊れる。Honest に。

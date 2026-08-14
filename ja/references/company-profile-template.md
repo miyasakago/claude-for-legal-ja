@@ -1,7 +1,7 @@
 # Company Profile(会社プロファイル)
 
 *すべての Claude for Legal プラグインで共有されます。最初にセットアップしたプラグインがこのファイルを書き込み、残りはそれを読み込みます。
-直接編集するか、任意のプラグインの `/setup` を再実行して更新してください。*
+直接編集するか、任意のプラグインの `/cold-start-interview` を再実行して更新してください。*
 
 **Practice setting(実務形態):** [Solo/small firm | Midsize/large firm | In-house | Government/legal aid/clinic / 個人・小規模事務所 | 中規模・大規模事務所 | インハウス | 政府・リーガルエイド・クリニック]
 **Name(名称):** [会社名または事務所名]

@@ -163,7 +163,7 @@ law-student においては、「research tool」は「ケースブック/バー
 **学校:** [PLACEHOLDER]
 **目標バー法域(Bar jurisdiction target):** [PLACEHOLDER]
 **目標バー試験日:** [PLACEHOLDER]
-**Prep course(バー試験対策コース):** [PLACEHOLDER — Barbri / Themis / Kaplan / self / N/A]
+**Prep course(バー試験対策コース):** [PLACEHOLDER — 商用バー試験対策コース名 / self / N/A]
 
 ---
 

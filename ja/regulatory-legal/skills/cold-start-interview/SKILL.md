@@ -52,7 +52,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 最初にこの前文を表示(3-4 行程度、それ以上は不要):
 
-> **`regulatory-legal-ja` は、規制動向を追跡し、ポリシーギャップを評価し、コンプライアンス義務を管理する人のためのものです。** あなたの領域ではない? `/legal-builder-hub:related-skills-surfacer`。
+> **`regulatory-legal-ja` は、規制動向を追跡し、ポリシーギャップを評価し、コンプライアンス義務を管理する人のためのものです。** あなたの領域ではない? `/legal-builder-hub-ja:related-skills-surfacer`。
 >
 > **2 分**で role、practice setting、主要な規制レジームが設定できます。**15 分**で完全な watchlist、重要性閾値、フィード実行頻度、ポリシーライブラリ索引、コメント期間ソースまで設定できます。
 >
@@ -126,7 +126,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 #### 何が接続されている?
 
-> このプラグインは以下と連携できます: 規制フィード(Thomson Reuters Regulatory Intelligence)、ドキュメントストレージ(Google Drive、SharePoint、Box)、Slack。どのコネクターが設定済みかチェックさせてください — それを必要とする機能は動作し、そうでない機能は黙って失敗するのではなく manual に gracefully フォールバックします。
+> このプラグインは以下と連携できます: 規制フィードのサブスクリプション、ドキュメントストレージ(Google Drive、SharePoint、Box)、Slack。どのコネクターが設定済みかチェックさせてください — それを必要とする機能は動作し、そうでない機能は黙って失敗するのではなく manual に gracefully フォールバックします。
 
 **設定済みではなく、実際に接続されているものをチェックする。** `.mcp.json` にリストされているコネクターは *available* です。実際に応答しているコネクターは *connected* です。これらは違い、混同すると信頼が失われる。このプラグインが使う各コネクターについて:
 
@@ -136,7 +136,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 Federal Register API は無料の公開エンドポイントで常に利用可能 — MCP コネクターは不要。
 
-接続されていないと表示されたコネクターについて、接続方法をユーザーに伝える。例の言い回し: "TR Regulatory Intelligence isn't connected. In Claude Cowork: Settings → Connectors → Add → Thomson Reuters → sign in. In Claude Code: add the TR MCP to your config or via `/mcp`. This plugin works without it — Federal Register + manual paste covers US federal coverage — but connecting it adds enrichment and alert import."
+接続されていないと表示されたコネクターについて、接続方法をユーザーに伝える。例の言い回し: "[Feed provider] isn't connected. In Claude Cowork: Settings → Connectors → Add → [provider] → sign in. In Claude Code: add the provider's MCP to your config or via `/mcp`. This plugin works without it — Federal Register + manual paste covers US federal coverage — but connecting it adds enrichment and alert import."
 
 それから次の形で findings を報告:
 
@@ -244,14 +244,14 @@ Federal Register API(federalregister.gov/api)は米国連邦機関の安定し�
 
 **Step 2: Paid サブスクリプションを尋ねる(additive、required ではない)**
 
-- TR Regulatory Intelligence サブスクリプション?どのアラートが設定されているか?
+- 有料規制フィードのサブスクリプション?どのプロバイダーで、どのアラートが設定されているか?
 - CourtListener?どのトラッカーか?
 
 yes なら: 無料フィードの上に enrichment layer として設定。no なら: 無料フィードで進めるのに十分。
 
 **Step 3: Manual entry フォールバック**
 
-> Law360、ニュースレター、外部弁護士から何かを見て、システムを通したいとき — ただ貼り付けてください。ポリシーと突合し、ギャップを追跡します。そのためにフィードサブスクリプションは不要です。
+> リーガルニュースサービス、ニュースレター、外部弁護士から何かを見て、システムを通したいとき — ただ貼り付けてください。ポリシーと突合し、ギャップを追跡します。そのためにフィードサブスクリプションは不要です。
 
 manual entry が有効であることを config に記録。
 
@@ -296,7 +296,7 @@ yes なら: comment-tracker を有効化。コメント決定のデフォルト�
 **有料フィード(設定されている場合):**
 | サービス | サブスクリプション | アラート |
 |---|---|---|
-| TR Regulatory Intelligence | [yes/no] | [alert names] |
+| [有料フィードプロバイダー] | [yes/no] | [alert names] |
 | CourtListener | [yes/no] | [tracker names] |
 
 **Manual entry:** Enabled — 任意の規制動向を貼ると diff + ギャップトラッキングをトリガー。

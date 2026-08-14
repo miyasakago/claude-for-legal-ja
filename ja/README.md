@@ -162,7 +162,7 @@ managed-agent-cookbooks/  # Claude Managed Agent クックブック — スケ�
   launch-radar/
   reg-monitor/
   renewal-watcher/
-scripts/                  # deploy-managed-agent.sh · validate.py · orchestrate.py · lint-tool-scope.py
+scripts/                  # deploy-managed-agent.sh · validate.py · orchestrate.py · lint-tool-scope.py · test-cookbooks.sh
 .claude-plugin/
   marketplace.json        # プラグイン登録
 ```
@@ -376,6 +376,7 @@ Anthropic の API ではなく独自クラウド(Vertex AI、Bedrock、または
 | コマンド | スキル | 何をするか |
 |---|---|---|
 | `/ai-governance-legal-ja:cold-start-interview` | cold-start-interview | コールドスタート — AI ガバナンス実務を学習 |
+| `/ai-governance-legal-ja:ai-inventory` | ai-inventory | EU AI Act のシステム別インベントリ — 各システムのロールとリスク階層を追跡 |
 | `/ai-governance-legal-ja:use-case-triage` | use-case-triage | AI ユースケースを分類 — 承認、条件付き、否 |
 | `/ai-governance-legal-ja:aia-generation` | aia-generation | 自社書式で AI 影響評価を実施 |
 | `/ai-governance-legal-ja:vendor-ai-review` | vendor-ai-review | ベンダー AI 規約をガバナンススタンスに照らしてレビュー |
@@ -480,6 +481,7 @@ Anthropic の API ではなく独自クラウド(Vertex AI、Bedrock、または
 | `/ip-legal-ja:cold-start-interview` | cold-start-interview | コールドスタート — IP 実務とスタンスを学習 |
 | `/ip-legal-ja:clearance` | clearance | 商標クリアランス初回 — ノックアウト + 類似商標 |
 | `/ip-legal-ja:fto-triage` | fto-triage | FTO トリアージ、FTO 意見書ではない |
+| `/ip-legal-ja:invention-intake` | invention-intake | 発明届出の初回スクリーニング — 新規性、非自明性、§101、バー期限 |
 | `/ip-legal-ja:cease-desist` | cease-desist | C&D を起案または受領分をトリアージ |
 | `/ip-legal-ja:takedown` | takedown | DMCA 通知、回答トリアージ、または §512(g) 異議通知 |
 | `/ip-legal-ja:infringement-triage` | infringement-triage | 4 種類すべての IP 権利にわたる侵害トリアージ |

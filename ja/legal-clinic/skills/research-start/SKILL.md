@@ -113,7 +113,7 @@ Westlaw、またはクリニックが使うもの用。
 
 > **No silent supplement.** このスキルはリードを生成し、典拠引用ではない — 設計により学生が引用を自分で追跡する。しかし設定済みリサーチツール(Westlaw、CourtListener)へのクエリが特定のルールまたは判例についてほとんどまたは結果ゼロを返す場合、そう述べて停止。尋ねずに web 検索またはモデル知識から引用を製造して薄い結果セットを埋めないこと。述べる: 「The search returned [N] results from [tool]. Coverage appears thin for [rule]. Options: (1) broaden the search query, (2) try a different research tool, (3) search the web — results will be tagged `[web search — verify]` and should be checked against a primary source before relying, or (4) stop here and flag the gap for your supervisor. Which would you like?」 指導弁護士が低信頼度ソースを受け入れるかを決める。
 >
-> **Source attribution.** 各提案引用に、出所をタグ付け: 法律リサーチコネクターから取得した引用には `[Westlaw]`、`[CourtListener]`、`[Fastcase]`、または MCP ツール名; web 検索引用には `[web search — verify]`; トレーニングデータから想起された引用には `[model knowledge — verify]`; 指導弁護士または案件ファイルから提供された引用には `[user provided]`。`verify` タグ付き引用は高い fabrication リスクを持ち、最初にチェックすべき。タグを剥がしたり折りたたんだりしない — それらは、どのリードが raw research でどれが一次ソースに照らして検証すべきモデルの推測かを学生に伝える。
+> **Source attribution.** 各提案引用に、出所をタグ付け: 法律リサーチコネクターから取得した引用には `[Westlaw]`、`[CourtListener]`、または MCP ツール名; web 検索引用には `[web search — verify]`; トレーニングデータから想起された引用には `[model knowledge — verify]`; 指導弁護士または案件ファイルから提供された引用には `[user provided]`。`verify` タグ付き引用は高い fabrication リスクを持ち、最初にチェックすべき。タグを剥がしたり折りたたんだりしない — それらは、どのリードが raw research でどれが一次ソースに照らして検証すべきモデルの推測かを学生に伝える。
 
 ### Step 4: アップロードされたリサーチを統合(あれば)
 
@@ -188,7 +188,7 @@ seed documents match this issue — proceeding to primary sources」。]
 
 ---
 
-**Cite verification — required before use.** 上記引用は AI モデルによって生成され、検証されていない。任意の判例、法令、ルールに依拠する前に — またはクライアント業務に含める前に — 正確性と現行 good-law ステータスについて Westlaw、Fastcase、CourtListener、またはクリニックのリサーチプラットフォームで確認。未検証引用は指導弁護士にフラグ。
+**Cite verification — required before use.** 上記引用は AI モデルによって生成され、検証されていない。任意の判例、法令、ルールに依拠する前に — またはクライアント業務に含める前に — 正確性と現行 good-law ステータスについて Westlaw、CourtListener、またはクリニックのリサーチプラットフォームで確認。未検証引用は指導弁護士にフラグ。
 ```
 
 ## このスキルが行わないこと

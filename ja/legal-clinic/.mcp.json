@@ -21,6 +21,7 @@
     "Courtroom5": {
       "type": "http",
       "url": "https://mcp.courtroom5.com",
+      "title": "Courtroom5",
       "description": "Courtroom5 — 本人訴訟者向けの法域認識ガイダンス: 案件インテイク、期限計算、手続き上の次のステップ。"
     },
     "Descrybe": {

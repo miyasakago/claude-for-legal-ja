@@ -25,7 +25,7 @@ export GDRIVE_MCP_URL=...
 
 ## セキュリティとハンドオフ
 
-規制フィードのコンテンツ(Federal Register エントリー、機関 RSS の投稿、TR alerts 通知)は**信頼できない入力**です。3 層の分離:
+規制フィードのコンテンツ(Federal Register エントリー、機関 RSS の投稿、有料フィードのアラート)は**信頼できない入力**です。3 層の分離:
 
 | ティア | 信頼できない文書に触れる? | ツール | コネクタ |
 |---|---|---|---|
@@ -43,8 +43,7 @@ export GDRIVE_MCP_URL=...
 
 ワークフローで出力を信頼する前に:
 
-- **`feed-reader` をあなたのソースに向ける。** デフォルトターゲットは Federal Register(無料の公開 API、MCP 不要)です。あなたの法律事務所が Thomson Reuters Regulatory Intelligence、Bloomberg Law、または直接の機関 RSS に加入している場合、feed-reader の web_fetch 許可リストにエンドポイントを追加し、Orchestrator のスキャンプランを調整してください。無料ソースしかない場合でも、Federal Register API 単体で実用可能です。
-- **(任意で)Thomson Reuters MCP URL を設定する。** マニフェストでは TR はコメントアウトされています。チームが課金している場合、結線して `enabled: true` を反転してください。
+- **`feed-reader` をあなたのソースに向ける。** デフォルトターゲットは Federal Register(無料の公開 API、MCP 不要)です。あなたの法律事務所が有料の規制フィードに加入しているか、直接の機関 RSS を使っている場合、feed-reader の web_fetch 許可リストにエンドポイントを追加し、Orchestrator のスキャンプランを調整してください。無料ソースしかない場合でも、Federal Register API 単体で実用可能です。
 - **ダイジェスト配信チャンネルを設定する。** digest-writer は Slack チャンネルを指名する `handoff_request` を発出します。Orchestrator は、お客様の regulatory-legal 設定の **House style → Reg digest** フィールドからそのチャンネルを読みます。初回スケジュールド実行の前に設定してください。さもないとハンドオフはデッドレターになります。ダイジェストをメールや Confluence ページで受け取りたいチームは、Orchestrator の許可リストでハンドオフターゲットをスワップしてください。
 - **重要性閾値をチューニングする。** materiality-filter はあなたの設定の `## Materiality threshold` セクション ― always material / review-worthy / FYI ― を読みます。スケジュールド実行を有効化する前に、ティアが現在のリスクポスチャを反映していることを確認してください。閾値が低すぎるとダイジェストが溢れ、高すぎると締切のある義務を見逃します。
 - **ウォッチリストを更新する。** materiality-filter は `## Regulators we watch` テーブルも読みます。あなたのフットプリントが変わったら規制当局を追加または削除してください。

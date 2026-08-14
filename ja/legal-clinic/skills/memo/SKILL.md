@@ -191,9 +191,9 @@ IRAC ブロックの後の別セクション:
 
 ---
 
-**Cite verification — required before use.** 上記で提示された任意のフレームワークルール、判例、法令は AI モデルによって生成されており、検証されていない。任意の引用に依拠する前に — またはクライアント業務に含める前に — 正確性と現行 good-law ステータスについて Westlaw、Fastcase、CourtListener、またはクリニックのリサーチプラットフォームで確認。未検証引用は指導弁護士にフラグ。
+**Cite verification — required before use.** 上記で提示された任意のフレームワークルール、判例、法令は AI モデルによって生成されており、検証されていない。任意の引用に依拠する前に — またはクライアント業務に含める前に — 正確性と現行 good-law ステータスについて Westlaw、CourtListener、またはクリニックのリサーチプラットフォームで確認。未検証引用は指導弁護士にフラグ。
 
-**Source attribution.** 骨組み内の各提案引用に、出所をタグ付け: 法律リサーチコネクターから取得した引用には `[Westlaw]`、`[CourtListener]`、`[Fastcase]`、または MCP ツール名; web 検索引用には `[web search — verify]`; トレーニングデータから想起された引用には `[model knowledge — verify]`; 指導弁護士または案件ファイルから提供された引用には `[user provided]`。`verify` タグ付き引用は、ツール取得引用より高い fabrication リスクを持ち、最初にチェックすべき。タグを剥がしたり折りたたんだりしない — それらはどの引用を検証すべきかについての指導弁護士への最速シグナル。
+**Source attribution.** 骨組み内の各提案引用に、出所をタグ付け: 法律リサーチコネクターから取得した引用には `[Westlaw]`、`[CourtListener]`、または MCP ツール名; web 検索引用には `[web search — verify]`; トレーニングデータから想起された引用には `[model knowledge — verify]`; 指導弁護士または案件ファイルから提供された引用には `[user provided]`。`verify` タグ付き引用は、ツール取得引用より高い fabrication リスクを持ち、最初にチェックすべき。タグを剥がしたり折りたたんだりしない — それらはどの引用を検証すべきかについての指導弁護士への最速シグナル。
 
 **No silent supplement.** 設定済みリサーチツールへのクエリが、メモが必要とするルールに対してほとんどまたは結果ゼロを返す場合、そう述べて停止。尋ねずに web 検索またはモデル知識からギャップを埋めないこと。述べる: 「The search returned [N] results from [tool]. Coverage appears thin for [rule / issue]. Options: (1) broaden the search query, (2) try a different research tool, (3) search the web — results will be tagged `[web search — verify]` and should be checked against a primary source before relying, or (4) leave `[RULE TO VERIFY]` and stop. Which would you like?」 指導弁護士が低信頼度ソースを受け入れるかを決める。
 ```

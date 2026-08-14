@@ -26,6 +26,7 @@
 | コマンド | 機能 |
 |---|---|
 | `/ai-governance-legal-ja:cold-start-interview` | コールドスタート・インタビュー — プラクティスプロファイルを書き出す |
+| `/ai-governance-legal-ja:ai-inventory [list \| add \| edit \| classify \| show]` | EU AI Act のシステム別インベントリを管理 — 各システムのロールとリスク階層を追跡 |
 | `/ai-governance-legal-ja:use-case-triage [use case]` | ユースケースを台帳に照らして分類(approved / conditional / never) |
 | `/ai-governance-legal-ja:aia-generation [use case]` | AI 影響評価(AIA)をハウススタイルで実施 |
 | `/ai-governance-legal-ja:vendor-ai-review [vendor/file]` | ベンダー AI 契約をあなたのポジションに照らしてレビュー |
@@ -39,6 +40,7 @@
 | スキル | 目的 |
 |---|---|
 | **cold-start-interview** | インタビュー + シード文書から `~/.claude/plugins/config/claude-for-legal-ja/ai-governance-legal-ja/CLAUDE.md` を作成 |
+| **ai-inventory** | EU AI Act のシステム別インベントリ — システムごとのロール(provider, deployer, importer, distributor, authorized rep, product manufacturer)とリスク階層 |
 | **use-case-triage** | ユースケースを台帳に照らして分類し、未実施の評価をフラグ |
 | **aia-generation** | AI 影響評価(AIA)をハウスフォーマットで作成 |
 | **vendor-ai-review** | ガバナンスポジションに照らした AI 固有のベンダー契約レビュー |

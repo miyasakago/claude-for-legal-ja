@@ -6,7 +6,7 @@ description: >
   ダイジェストはノイズではなくシグナルになります。トリガー: "reg digest", "what's new from
   regulators", "規制ダイジェスト", "規制機関の最新情報", またはスケジュール起動。
 model: sonnet
-tools: ["Read", "Write", "WebFetch", "mcp__thomson-reuters__*", "mcp__*__slack_send_message"]
+tools: ["Read", "Write", "WebFetch", "mcp__*__slack_send_message"]
 ---
 
 # Reg Change Monitor エージェント

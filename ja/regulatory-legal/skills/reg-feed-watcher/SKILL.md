@@ -65,14 +65,14 @@ pull を実行する前に、CLAUDE.md のウォッチリスト + フィード�
 
 **Tier 2 — 有料フィード(設定されている場合)**
 
-- **TR Regulatory Intelligence MCP:** 前回チェック日以降の更新をクエリ、ウォッチリスト規制機関でフィルタ。
+- **有料規制フィード MCP:** 前回チェック日以降の更新をクエリ、ウォッチリスト規制機関でフィルタ。
 - **CourtListener MCP:** 同じ。
 
 tier をまたいで重複排除 — 同じドキュメントが複数のソースに現れる可能性。enriched 出力には最も豊富なソースを優先。
 
 **No silent supplement.** フィード pull がウォッチリストの規制機関について少ないまたは結果なしを返した場合、見つかったものを報告して停止。質問せずにウェブ検索やモデル知識からギャップを埋めない。言う: "The feed check returned [N] items from [regulators hit]. Coverage appears thin for [regulator / topic]. Options: (1) broaden the date window, (2) try a different feed or MCP, (3) search the web — results will be tagged `[web search — verify]` and should be checked against the issuing authority's website before relying, or (4) stop here. Which would you like?" 弁護士が低信頼度ソースを受け入れるか決める;Claude が代わりに決めない。
 
-**Source attribution.** すべての citation と規制項目に出所をタグ付け: コネクター経由で取得した項目は `[Federal Register]`、`[<regulator> RSS]`、`[TR]`、`[CourtListener]`、または具体的な MCP ツール名;ウェブ検索からの項目は `[web search — verify]`;モデル訓練データから浮上した項目は `[model knowledge — verify]`;手動貼り付け項目は `[user provided]`。`verify` タグの項目は tool-retrieved 項目より捏造リスクが高く、先にチェックすべき。タグを strip または collapse しない — それらはユーザーがどの citation を検証すべきかを最も速く知るシグナル。
+**Source attribution.** すべての citation と規制項目に出所をタグ付け: コネクター経由で取得した項目は `[Federal Register]`、`[<regulator> RSS]`、`[CourtListener]`、または具体的な MCP ツール名;ウェブ検索からの項目は `[web search — verify]`;モデル訓練データから浮上した項目は `[model knowledge — verify]`;手動貼り付け項目は `[user provided]`。`verify` タグの項目は tool-retrieved 項目より捏造リスクが高く、先にチェックすべき。タグを strip または collapse しない — それらはユーザーがどの citation を検証すべきかを最も速く知るシグナル。
 
 **二次ソース。** 一部のカタログエントリ(IAPP(国際プライバシー専門家協会)、FPF(Future of Privacy Forum)、Hogan Lovells、Covington、Lexology、JD Supra、Artificial Lawyer、LawSites、同様のコメンテーター/aggregator)は primary regulatory action を報じるが、primary source ではない。これらのフィードから pull された項目には feed-name タグに加えて `[secondary source]` をタグ付け — 例: `[IAPP Daily Dashboard] [secondary source]`。ダイジェストで、二次ソース項目が規制機関のアクションを記述するとき、注記を追加: "→ Trace to primary: [link to regulator site if known, otherwise 'find on <regulator>.gov before relying']." 二次ソース項目を自身の力で「Always material」と分類しない — primary source が見つかるまで tier を 1 つ下げる。
 

@@ -81,7 +81,7 @@ argument-hint: "[--redo to re-run] [--check-integrations to re-probe integration
 
 他の何かを尋ねる前に、フォーク・ファースト前置きを表示 — 3-4 行の短いもの:
 
-> **`privacy-legal-ja` はプライバシープログラムを動かす人向け: PIA、DPA レビュー、DSAR 対応、規制ギャップ分析。** 違う分野? `/legal-builder-hub:related-skills-surfacer`。
+> **`privacy-legal-ja` はプライバシープログラムを動かす人向け: PIA、DPA レビュー、DSAR 対応、規制ギャップ分析。** 違う分野? `/legal-builder-hub-ja:related-skills-surfacer`。
 >
 > **2 分**で役割、DPA のどちら側にいるか(処理者/管理者/両方)、主要法域、それ以外は妥当なデフォルト。**15 分**で DPA プレイブックポジション(処理者側と管理者側)、参考 PIA からの PIA テンプレート構造、完全な規制フットプリント、処理活動シード。
 >

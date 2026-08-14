@@ -28,12 +28,12 @@ argument-hint: "[section name, or describe what you want to change]"
    - **Company / 会社情報** — 名前、業界、法域、ステージ、practice setting *(12 プラグイン全体で共有 — 変更は `company-profile.md` を通して流れる)*
    - **Regulators we watch** — 範囲内の agencies / bodies / SRO / 州規制機関、そしてどれが "leading"(ポリシー影響を最も推進する可能性が高い)vs. "monitor" か
    - **Policy library** — ライブラリが索引化する内部ポリシー、各パス、ポリシーごとのオーナー
-   - **Materiality threshold** — 規制変更が "notable" vs. "report" vs. "digest only" に到達するタイミング;この閾値が `/watch` 出力をどうフィルタするか
+   - **Materiality threshold** — 規制変更が "notable" vs. "report" vs. "digest only" に到達するタイミング;この閾値が `/reg-feed-watcher` 出力をどうフィルタするか
    - **Gap response process** — 誰がトリアージするか、severity ごとの SLA、下流オーナー(ポリシー、プロダクト、トレーニング)
-   - **Feed configuration** — 規制機関フィード、Thomson Reuters コネクター、`/watch` sweep の cadence、ダイジェストチャンネル
+   - **Feed configuration** — 規制機関フィード、有料フィードコネクター、`/reg-feed-watcher` sweep の cadence、ダイジェストチャンネル
    - **People** — 規制弁護士、ポリシーオーナー、コメントドラフター、エスカレーションチェーン
    - **Workflow** — 案件ワークスペース、未解決ギャップトラッカー、コメント deadline トラッカー、ダイジェスト公開 cadence
-   - **Integrations** — Thomson Reuters / Slack / ドキュメントストレージのステータス、フォールバック
+   - **Integrations** — 規制フィード / Slack / ドキュメントストレージのステータス、フォールバック
 
 3. **何を変えたいか尋ねる。**
 
@@ -43,9 +43,9 @@ argument-hint: "[section name, or describe what you want to change]"
 4. **変更する。** 現在値を表示、新しい値を尋ねる、下流で何が変わるか説明、確認、config に書く。
 
    例:
-   - *監視リストに規制機関を追加:* "`/watch` will sweep this regulator on its next run. `/diff` will accept inputs from this regulator's rulemaking feed."
-   - *重要性閾値を厳しくする:* "`/watch` digest will be shorter — items below the new threshold will drop from the weekly digest but stay searchable."
-   - *新しいポリシーをライブラリに追加:* "`/diff` will include this policy when matching new rules against the library. The comment tracker will tag comments affecting this policy."
+   - *監視リストに規制機関を追加:* "`/reg-feed-watcher` will sweep this regulator on its next run. `/policy-diff` will accept inputs from this regulator's rulemaking feed."
+   - *重要性閾値を厳しくする:* "`/reg-feed-watcher` digest will be shorter — items below the new threshold will drop from the weekly digest but stay searchable."
+   - *新しいポリシーをライブラリに追加:* "`/policy-diff` will include this policy when matching new rules against the library. The comment tracker will tag comments affecting this policy."
 
 5. **共有プロファイルの変更**(会社名、業界、法域、practice setting、ステージ): `~/.claude/plugins/config/claude-for-legal-ja/company-profile.md` に書き、注記する:
 

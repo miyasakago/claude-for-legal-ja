@@ -60,7 +60,7 @@ argument-hint: "[--redo] [--check-integrations]"
 
 最初にこのプリアンブルを表示(短い 3〜4 行、それ以上は不要):
 
-> **`law-student-ja` is for law students studying for class or the bar.** あなたの領域ではない場合は `/legal-builder-hub:related-skills-surfacer`.
+> **`law-student-ja` is for law students studying for class or the bar.** あなたの領域ではない場合は `/legal-builder-hub-ja:related-skills-surfacer`.
 >
 > **2 minutes** で、学年(1L/2L/3L/bar prep)、現在のクラス、該当する場合のバー試験日を捕捉します。**15 minutes** で、学習スタイル・デフォルト(drill-me vs. explain-to-me)、弱点領域、過去の素材(アウトライン、採点済みエッセイ、過去の試験問題)、アップロードからの教授試験履歴、フラッシュカード科目を追加で捕捉。
 >
@@ -223,7 +223,7 @@ Part 0 の答えを `## このプラグインを使うのは` と `## 利用可�
 - 同じ教授からの過去試験問題(特に同じ教授;最高シグナル)
 - 現在のクラスのシラバス
 - 現在のクラスの読書課題 / ケースブック
-- 解答解説付きの練習 MBE 問題セット(Barbri/Themis/Kaplan — フルセット持っていれば)
+- 解答解説付きの練習 MBE 問題セット(受講中の prep course のもの — フルセット持っていれば)
 - そのステージなら bar prep course のアウトライン
 
 **クラス specifics:**

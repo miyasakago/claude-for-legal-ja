@@ -43,7 +43,7 @@
 
 | 統合 | 状態 | 利用できない場合のフォールバック |
 |---|---|---|
-| 規制フィード(Thomson Reuters Regulatory Intelligence) | [✓ / ✗] | 無料の Federal Register API + ユーザーが貼り付けたアラート;エンリッチメント層なし |
+| 規制フィード(有料サブスクリプション) | [✓ / ✗] | 無料の Federal Register API + ユーザーが貼り付けたアラート;エンリッチメント層なし |
 | ドキュメントストレージ(Google Drive, SharePoint, Box) | [✓ / ✗] | ローカルパスから索引化されたポリシーライブラリ |
 | Slack | [✓ / ✗] | ダイジェストはファイルとしてのみ出力;チャンネル内アラートなし |
 
@@ -90,7 +90,7 @@
 
 ## フィード設定(Feed configuration)
 
-**TR Regulatory Intelligence:** [PLACEHOLDER — サブスクリプション、アラート]
+**有料規制フィード:** [PLACEHOLDER — プロバイダー、サブスクリプション、アラート]
 **CourtListener:** [PLACEHOLDER]
 **規制機関の直接フィード:** [PLACEHOLDER — RSS、メーリングリスト]
 **チェック頻度:** [PLACEHOLDER — 日次 / 週次]

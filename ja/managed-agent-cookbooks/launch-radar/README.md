@@ -34,7 +34,7 @@ export LINEAR_MCP_URL=... ATLASSIAN_MCP_URL=... ASANA_MCP_URL=... GDRIVE_MCP_URL
 | ティア | 信頼できないトラッカーコンテンツに触れる? | ツール | コネクタ |
 |---|---|---|---|
 | **`tracker-reader`** | **Yes** | `Read`, `Grep` のみ | Linear、Jira(atlassian)、Asana(読み取り専用) |
-| `risk-classifier` / Orchestrator | No | `Read`, `Grep`, `Glob`, `WebFetch`, `Agent` | Orchestrator のみ: Linear / Jira / Asana / Drive(読み取り専用) |
+| `risk-classifier` / Orchestrator | No | `Read`, `Grep`, `Glob`, `Agent` | Orchestrator のみ: Linear / Jira / Asana / Drive(読み取り専用) |
 | **`memo-writer`**(Write 保有者) | No | `Read`, `Write`, `Edit` | なし |
 
 `tracker-reader` は長さ制限・スキーマ検証済みの JSON ローンチリストを返します。`risk-classifier` は MCP もネットワークも持たず、検証済みリストとユーザーのキャリブレーションファイルから動作します。`memo-writer` は Write を持つ唯一のワーカーで、`./out/launch-radar-<date>.md` を生成します。Orchestrator は Write を持たず、生のチケット本体を自分でパースしません。

@@ -70,7 +70,7 @@ argument-hint: "[--redo | --check-integrations]"
 
 fork-first 前文で開始。3-4 短い行に保つ。何より前に quick-or-full を尋ねる。
 
-> **`litigation-legal-ja` is for people who work litigation — managing a portfolio of matters in-house, drafting briefs and doing discovery at a firm, or both as a solo practitioner.** Not your area? `/legal-builder-hub:related-skills-surfacer`.
+> **`litigation-legal-ja` is for people who work litigation — managing a portfolio of matters in-house, drafting briefs and doing discovery at a firm, or both as a solo practitioner.** Not your area? `/legal-builder-hub-ja:related-skills-surfacer`.
 >
 > **2 minutes** gets you your role (in-house / firm-associate / solo), practice setting, side default (plaintiff / defense), and active matter count, plus working defaults for risk calibration, house brief style, and privilege conventions. **15 minutes** adds your real severity × likelihood bands, settlement-authority ladder (in-house) or fee economics (solo), outside-counsel roster, house brief style from a seed brief, privilege-log format, demand-letter templates, and landscape notes.
 >

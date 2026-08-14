@@ -26,7 +26,7 @@ system:
     そのフレーミングを和らげないでください。
 
 tools:
-  # Orchestrator はローカル限定ツールのみを使用。MCP と web_fetch はサブエージェントのリーフが
+  # Orchestrator はローカル限定ツールのみを使用。MCP はサブエージェントのリーフが
   # 保持(callable_agents 参照)。
   - type: agent_toolset_20260401
     default_config: { enabled: false }

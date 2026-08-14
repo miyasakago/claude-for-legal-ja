@@ -50,7 +50,7 @@ argument-hint: "[section name, or describe what you want to change]"
 4. **変更を加える。** 現在値を表示、新しい値を尋ね、下流で何が変わるか説明、確認、設定に書き込み。
 
    例:
-   - *Side 混合 → 被告専用:* 「`/new-matter` intake は原告サイドの質問をしなくなります。`/demand-draft` は被告サイドの訴訟前要求でも動作しますが、出発のフレームが変わります。」
+   - *Side 混合 → 被告専用:* 「`/matter-intake` は原告サイドの質問をしなくなります。`/demand-draft` は被告サイドの訴訟前要求でも動作しますが、出発のフレームが変わります。」
    - *リスクキャリブレーションで高リスク閾値を厳しく:* 「より多くの受領要求とサブポエナが `/matter-briefing` と `/oc-status` にルートされます。」
    - *IP 案件用の新規スタンディング OC:* 「`/oc-status` は IP タグの案件の週次スイープにこの事務所を含めます。」
 
